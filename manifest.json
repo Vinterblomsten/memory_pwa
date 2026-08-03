@@ -1,17 +1,10 @@
 {
-  "lang": "en-us",
-  "name": "Flashcard App",
-  "short_name": "Flash&Bash",
-  "description": "A custom flashcard app for personal study",
-  "start_url": "./",
-  "background_color": "#2f3d58",
-  "theme_color": "#2f3d58",
-  "orientation": "any",
-  "display": "standalone",
-  "icons": [
-      {
-          "src": "./icon.png",
-          "sizes": "100x100"
-      }
-  ]
+    "start_url": "/memory_pwa/index.html",
+    "icons": [
+        {
+            "src": "/memory_pwa/icon.png",
+            "sizes": "100x100",
+            "type": "image/png"
+        }
+    ]
 }
