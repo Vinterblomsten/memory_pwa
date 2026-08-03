@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // Popup logic
-const playButton = document.getElementById("playButton");
+const playButton = document.getElementByClass("choice");
 const popup = document.getElementById("popup");
 const closeBtn = document.querySelector(".close-btn");
 const saveSettings = document.getElementById("saveSettings");
