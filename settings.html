@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+</head>
+<body>
+    <h1>Settings</h1>
+    <div class="setting">
+        <label for="direction">What to guess:</label>
+        <div class="radio-group">
+            <label class="radio-label">
+                <input type="radio" name="direction" value="name">
+                <span>Name</span>
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="direction" value="value" checked>
+                <span>Value</span>
+            </label>
+        </div>
+    </div>
+    <div class="setting">
+        <label for="numquestions">Number of questions:</label>
+        <div class="radio-group">
+            <label class="radio-label">
+                <input type="radio" name="numq" value="5">
+                <span>5</span>
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="numq" value="20" checked>
+                <span>20</span>
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="numq" value="all" checked>
+                <span>All</span>
+            </label>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
