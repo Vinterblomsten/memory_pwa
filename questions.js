@@ -1,6 +1,6 @@
 const allQuestions = {
     aminoAcids: {
-        numQuestions: 4,
+        numQuestions: 20,
         images: false,
         questions: [
             {
@@ -45,7 +45,7 @@ const allQuestions = {
             },
             {
                 question: "Which amino acid is this?",
-                image: "./images/aminos/histidine.png",
+                image: "./images/aminos/histidine.jpg",
                 correct: "Histidine"
             },
             {
@@ -75,7 +75,7 @@ const allQuestions = {
             },
             {
                 question: "Which amino acid is this?",
-                image: "./images/aminos/serine.png",
+                image: "./images/aminos/serine.jpg",
                 correct: "Serine"
             },
             {
@@ -85,12 +85,12 @@ const allQuestions = {
             },
             {
                 question: "Which amino acid is this?",
-                image: "./images/aminos/tryptophan.png",
+                image: "./images/aminos/tryptophan.jpg",
                 correct: "Tryptophan"
             },
             {
                 question: "Which amino acid is this?",
-                image: "./images/aminos/tyrosine.png",
+                image: "./images/aminos/tyrosine.jpg",
                 correct: "Tyrosine"
             },
             {
