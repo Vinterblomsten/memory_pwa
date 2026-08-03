@@ -11,7 +11,3 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// Button click event
-document.querySelector('.btn').addEventListener('click', () => {
-  alert('Button clicked!');
-});
