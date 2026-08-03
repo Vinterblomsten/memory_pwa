@@ -9,14 +9,14 @@
 <body>
     <div class="quiz-container">
         <div class="question">
-            <h2 id="questionsText">What is the capital of Denmark?</h2>
-            <img id="questionImage" src="https://via.placeholder.com/300x200" alt="Denmark flag" class="question-image">
+            <h2 id="questionText">What is the capital of Denmark?</h2>
+            <img id="questionImage" src="" alt="Denmark flag" class="question-image">
         </div>
-
-        <div id="choices-grid">
-        </div>
+        <div id="choicesGrid"></div>
     </div>
-    <button class="btn" id="continueBtn" hidden, onclick="nextQuestion()">Continue</button>
+    <button class="btn" id="continueBtn", onclick="nextQuestion()">Continue</button>
+    <button class="btn" id="returnBtn", onclick="returnToMenu()">Continue</button>
+    <script src="questions.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

@@ -13,14 +13,15 @@ if ('serviceWorker' in navigator) {
 
 let questionIndex = 0;
 let score = 0;
-let answered = false;
 let shuffledQuestions = [];
 let numQuestions = 0;
+let answered = false;
 
 const questionEl = document.getElementById('questionText');
 const imageEl = document.getElementById('questionImage');
 const choicesGrid = document.getElementById('choicesGrid');
-const continueBtn = document.getElementById('continuebtn');
+const continueBtn = document.getElementById('continueBtn');
+const returnBtn = document.getElementById('returnBtn');
 //const progressEl = document.getElementById('progress');
 
 function shuffle(array) {
@@ -33,34 +34,28 @@ function shuffle(array) {
 }
 
 function generateWrongAnswers(correct, answers, num) {
-    let wrongAnswers = [];
-    while (wrongAnswers.length < num) {
-        let i = Math.floor(Math.random() * answers.length);
-        if (answers[i] != correct) {
-            wrongsAnswers.append(answers[i]);
-        }
-    }
-    return wrongAnswers;
+    let pool = answers.filter(a => a !== correct);
+    return shuffle(pool).slice(0, num);
 }
 
 function initializeQuestion() {
 
-    question = shuffledQuestions[questionIndex];
+    let q = shuffledQuestions[questionIndex];
 
-    continueBtn.hidden = TRUE;
-    let wrongOptions = question.wrong;
+    continueBtn.hidden = true;
+    questionEl.textContent = q.question;
 
-    questionEl.textContent = question.question;
-
-    const choices = shuffle(wrongOptions.append(question.correct));
+    const choices = shuffle([...q.wrong, q.correct]);
     choicesGrid.innerHTML = '';
     choices.forEach(choiceText => {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
         btn.textContent = choiceText;
-        btn.addEventListener('click', () => selectAnswer(choiceText, question.correct));
+        btn.addEventListener('click', () => selectAnswer(choiceText, q.correct));
         choicesGrid.appendChild(btn);
     });
+
+    answered = false
 
 }
 
@@ -71,22 +66,24 @@ function selectAnswer(selected, correct) {
         btn.disabled = true;
         if (btn.textContent === correct) {
             btn.style.backgroundColor = "#2ecc71"; // Green for correct
-            score += 1
         } else if (btn.textContent === selected) {
             btn.style.backgroundColor = "#e74c3c"; // Red for wrong
         }
     });
-
-    continueBtn.hidden = FALSE;
-    
+    if (selected === correct) {
+        if (!answered) score += 1;
+    }
+    continueBtn.hidden = false;
+    answered = true
 }
 
 function results() {
-    continueBtn.hidden = TRUE;
-    choicesGrid.hidden = TRUE;
-    imageEl.hidden = TRUE;
+    continueBtn.hidden = true;
+    choicesGrid.hidden = true;
+    imageEl.hidden = true;
 
     questionEl.textContent = `You got ${score} out of ${numQuestions} correct!`;
+    returnBtn.hidden = false
 
 }
 
@@ -101,23 +98,37 @@ function nextQuestion() {
 
 function startQuiz(quizData) {
     
-    let questions = []
+    returnBtn.hidden = true
 
-    for (let i = 0; i<quizData.numQuestions; i++) {
-        let questionData = quizData.questions[i]
-        let wrongAnswers = generateWrongAnswers(questionData.correct, quizData.validAnswers, 3)
-        if (quizData.images) {
-            questions.append({
-                question: questionData.questions,
-                correct: questionData.correct,
-                wrong: wrongAnswers
-            })
-        }
-    }
+    const questions = quizData.questions.map(q => ({
+        question: q.question,
+        image: q.image,
+        correct: q.correct,
+        wrong: generateWrongAnswers(q.correct, quizData.validAnswers, 3)
+    }));
 
-    shuffledQuestions = shuffle(questions)
-    numQuestions = quizData.numQuestions
+    shuffledQuestions = shuffle(questions);
+    numQuestions = quizData.numQuestions;
 
-    initializeQuestions()
+    initializeQuestion();
 
 }
+
+function selectQuiz(choice) {
+    sessionStorage.setItem('selectedQuiz', choice);
+    window.location.href = "question.html";
+}
+
+function returnToMenu() {
+    window.location.href = "index.html";
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (!questionEl) return; // not on the quiz page
+    const choice = sessionStorage.getItem('selectedQuiz');
+    if (choice && allQuestions[choice]) {
+        startQuiz(allQuestions[choice]);
+    } else {
+        questionEl.textContent = 'No quiz selected — go back and pick one.';
+    }
+});
