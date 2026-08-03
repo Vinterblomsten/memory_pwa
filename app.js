@@ -129,7 +129,7 @@ function selectQuiz(choice) {
 }
 
 function returnToMenu() {
-    window.location.href = "index.html";
+    window.location.href = "choice.html";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
