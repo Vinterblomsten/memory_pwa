@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="question">
+            <h2>What is the capital of Denmark?</h2>
+            <img src="https://via.placeholder.com/300x200" alt="Denmark flag" class="question-image">
+        </div>
+
+        <div class="choices-grid">
+            <button class="choice-btn" onclick="selectAnswer('Copenhagen', 'Copenhagen')">Copenhagen</button>
+            <button class="choice-btn" onclick="selectAnswer('Stockholm', 'Copenhagen')">Stockholm</button>
+            <button class="choice-btn" onclick="selectAnswer('Oslo', 'Copenhagen')">Oslo</button>
+            <button class="choice-btn" onclick="selectAnswer('Helsinki', 'Copenhagen')">Helsinki</button>
+        </div>
+    </div>
+    <button class="btn" id="continuebtn" hidden>Continue</button>
+    <script src="app.js"></script>
+</body>
+</html>

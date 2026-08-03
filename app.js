@@ -11,3 +11,19 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+function selectAnswer(selected, correct) {
+    const buttons = document.querySelectorAll(".choice-btn");
+    const consBut = document.getElementById("continuebtn");
+
+    buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === correct) {
+            btn.style.backgroundColor = "#2ecc71"; // Green for correct
+        } else if (btn.textContent === selected) {
+            btn.style.backgroundColor = "#e74c3c"; // Red for wrong
+        }
+    });
+
+    consBut.removeAttribute("hidden")
+
+}
