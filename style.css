@@ -85,7 +85,21 @@ p {
 .close-btn:hover {
     color: #333;
 }
+.setting {
+    margin: 15px 0;
+    text-align: left;
+}
 
+.setting label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+.setting select,
+.setting input {
+    margin-left: 10px;
+}
 /* Radio Button Styles */
 .radio-group {
     display: flex;
