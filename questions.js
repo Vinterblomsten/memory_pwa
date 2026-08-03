@@ -5,23 +5,23 @@ const allQuestions = {
         questions: [
             {
                 question: "Which amino acid is this?",
-                image: "",
-                correct: "Glutamate"
+                image: "./images/aminos/alanine.png",
+                correct: "Alanine"
             },
             {
                 question: "Which amino acid is this?",
-                image: "",
-                correct: "Valinin"
+                image: "./images/aminos/glycine.png",
+                correct: "Glycine"
             },
             {
                 question: "Which amino acid is this?",
-                image: "",
-                correct: "Thyromin"
+                image: "./images/aminos/proline.png",
+                correct: "Proline"
             },
             {
                 question: "Which amino acid is this?",
-                image: "",
-                correct: "Det er min"
+                image: "./images/aminos/valine.png",
+                correct: "Valine"
             },
         ],
         validAnswers: [

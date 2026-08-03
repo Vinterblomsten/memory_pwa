@@ -45,6 +45,15 @@ function initializeQuestion() {
     continueBtn.hidden = true;
     questionEl.textContent = q.question;
 
+    if (q.image) {
+        imageEl.src = q.image;
+        imageEl.alt = q.question;
+        imageEl.hidden = false;
+    } else {
+        imageEl.hidden = true;
+    }
+
+
     const choices = shuffle([...q.wrong, q.correct]);
     choicesGrid.innerHTML = '';
     choices.forEach(choiceText => {
