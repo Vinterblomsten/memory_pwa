@@ -1,10 +1,20 @@
 {
-    "start_url": "/memory_pwa/index.html",
-    "icons": [
-        {
-            "src": "/memory_pwa/icon.png",
-            "sizes": "100x100",
-            "type": "image/png"
-        }
-    ]
+  "name": "Memory Game",
+  "short_name": "Memory",
+  "start_url": "/memory_pwa/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/memory_pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/memory_pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
