@@ -10,6 +10,13 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+function selectQuiz(selected) {
+    const numquestions = "all";
+    const direction = "names";
+    
+    window.location.href = "question.html";
+
+}
 
 function selectAnswer(selected, correct) {
     const buttons = document.querySelectorAll(".choice-btn");
