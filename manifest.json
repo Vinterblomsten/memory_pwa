@@ -1,6 +1,6 @@
 {
-  "name": "Memory Game",
-  "short_name": "Memory",
+  "name": "Bubbles",
+  "short_name": "Bubbles",
   "start_url": "/memory_pwa/index.html",
   "display": "standalone",
   "background_color": "#ffffff",

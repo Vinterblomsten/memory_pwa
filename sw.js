@@ -1,12 +1,12 @@
-const CACHE_NAME = `flashcards-v1`;
+const CACHE_NAME = `bubbles-v1`;
 
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     cache.addAll([
       './',
-      //'./flashcards.js',
-      //'./flashcards.css'
+      '/style.css',
+      '/app.js',
     ]);
   })());
 });
