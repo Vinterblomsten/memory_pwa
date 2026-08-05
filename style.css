@@ -135,8 +135,6 @@ p {
 .question-image {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin-top: 15px;
 }
 
 .choices-grid {
@@ -163,4 +161,12 @@ p {
 
 .choice-btn:disabled {
     cursor: not-allowed;
+}
+
+#imageContainer {
+    width: 100%;
+    min-height: 120px;
+    max-height: auto;
+    float: left;
+    padding: 5px;
 }
